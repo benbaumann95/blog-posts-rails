@@ -1,8 +1,18 @@
 <h1>Index</h1>
 
-<div>
+<div class='container'>
   <% @blogs.each do |blog| %>
-    <p><%= link_to blog.title, blog_path(blog.id) %></p>
+  <%= link_to blog_path(blog.id) do %>
+  <div class='card'>
+    <p class='text-center'><%= blog.title %></p>
+    <% if blog.author? %>
+      <p class='text-center'>by <%= blog.author.capitalize %></p>
+    <% else %>
+      <p class='text-center'>by anonymous</p>
+    <% end %>
+
+  </div>
+  <% end %>
   <% end %>
 </div>
 
