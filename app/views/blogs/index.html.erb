@@ -1,0 +1,9 @@
+<h1>Index</h1>
+
+<div>
+  <% @blogs.each do |blog| %>
+    <p><%= link_to blog.title, blog_path(blog.id) %></p>
+  <% end %>
+</div>
+
+

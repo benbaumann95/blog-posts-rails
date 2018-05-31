@@ -1,0 +1,5 @@
+<%= simple_form_for [@blog, @review] do |f| %>
+  <%= f.input :name, required: true %>
+  <%= f.input :content, required: true %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
